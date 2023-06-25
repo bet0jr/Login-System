@@ -1,0 +1,11 @@
+{
+	"user": "bet0jr",
+	"repo": "Login-System",
+	"tag": "0.0.1",
+	"entry": "main.pwn",
+	"output": "main.amx",
+	"dependencies": [
+		"pawn-lang/samp-stdlib"
+	],
+	"local": true
+}
