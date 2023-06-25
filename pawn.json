@@ -2,10 +2,15 @@
 	"user": "bet0jr",
 	"repo": "Login-System",
 	"tag": "0.0.1",
-	"entry": "main.pwn",
-	"output": "main.amx",
+	"entry": "gamemodes/main.pwn",
+	"output": "gamemodes/main.amx",
 	"dependencies": [
-		"pawn-lang/samp-stdlib"
+		"pawn-lang/samp-stdlib",
+		"pBlueG/SA-MP-MySQL",
+		"LassiR/bcrypt-samp"
 	],
-	"local": true
+	"local": true,
+	"runtime": {
+		"version":"0.3.DL"
+	}
 }
