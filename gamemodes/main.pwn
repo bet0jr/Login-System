@@ -4,10 +4,10 @@
 
 #define 	function%0(%1)		forward %0(%1);		public %0(%1)
 
-#define 	MYSQL_HOSTNAME 		"127.0.0.1"
-#define 	MYSQL_USERNAME 		"beto"
-#define 	MYSQL_PASSWORD 		"123"
-#define 	MYSQL_DATABASE 		"san_andreas_roleplay"
+#define 	MYSQL_HOSTNAME 		""
+#define 	MYSQL_USERNAME 		""
+#define 	MYSQL_PASSWORD 		""
+#define 	MYSQL_DATABASE 		""
 
 #define 	MAX_PLAYER_PASS		(64)
 
@@ -90,7 +90,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(strlen(inputtext) < 8 || strlen(inputtext) > 16)
 				{
 					SendClientMessage(playerid, -1, "A senha precisa ter de 8 a 16 caracteres!");
-					return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "Registro", "Olá, bem vindo ao servidor!\n\nVocê não é registrado em nosso servidor,\nInsira uma senha abaixo:", "Registro", "Sair");
+					return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "Registro", "OlÃ¡, bem vindo ao servidor!\n\nVocÃª nÃ£o Ã© registrado em nosso servidor,\nInsira uma senha abaixo:", "Registro", "Sair");
 				}
 
 				return bcrypt_hash(inputtext, 12, "PlayerRegister", "d", playerid);
@@ -169,11 +169,11 @@ VerifyLogin(playerid)
 		cache_get_value_name(0, "name", PlayerInfo[playerid][pName], MAX_PLAYER_NAME);
 		cache_get_value_name(0, "pass", PlayerInfo[playerid][pPass], MAX_PLAYER_PASS);
 
-		ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login", "Olá, bem vindo ao servidor!\n\nInsira sua senha:", "Entrar", "Sair");
+		ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login", "OlÃ¡, bem vindo ao servidor!\n\nInsira sua senha:", "Entrar", "Sair");
 	}
 	else
 	{
-		ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "Registro", "Olá, bem vindo ao servidor!\n\nVocê não é registrado em nosso servidor,\nInsira uma senha abaixo:", "Registro", "Sair");
+		ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "Registro", "OlÃ¡, bem vindo ao servidor!\n\nVocÃª nÃ£o Ã© registrado em nosso servidor,\nInsira uma senha abaixo:", "Registro", "Sair");
 	}
 
 	cache_unset_active();
@@ -200,12 +200,12 @@ function VerifyPassword(playerid)
 		PlayerInfo[playerid][pLogged] = true;
 		SetSpawnInfo(playerid, NO_TEAM, 0, -2796.985, 1224.8180, 20.5429, 0.0, 0, 0, 0, 0, 0, 0);
 		SpawnPlayer(playerid);
-		SendClientMessage(playerid, -1, "Você foi logado!");
+		SendClientMessage(playerid, -1, "VocÃª foi logado!");
 	}
 	else
 	{
 		SendClientMessage(playerid, -1, "Senha incorreta!");
-		ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login", "Olá, bem vindo ao servidor!\n\nInsira sua senha:", "Entrar", "Sair");
+		ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login", "OlÃ¡, bem vindo ao servidor!\n\nInsira sua senha:", "Entrar", "Sair");
 	}
 	return 1;
 }
